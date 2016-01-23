@@ -1,0 +1,310 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Test Task Loft</title>
+<style>
+    @font-face {
+        font-family: 'fira_sanslight';
+        src: url('fonts/firasans-light.eot');
+        src: url('fonts/firasans-light.eot?#iefix') format('embedded-opentype'),
+        url('fonts/firasans-light.woff') format('woff'),
+        url('fonts/firasans-light.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'fira_sansbook';
+        src: url('fonts/firasans-book.eot');
+        src: url('fonts/firasans-book.eot?#iefix') format('embedded-opentype'),
+        url('fonts/firasans-book.woff') format('woff'),
+        url('fonts/firasans-book.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+    }
+    html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    footer {
+        height: 73px;
+        margin-top: -73px;
+        background: #eff3f7;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+    }
+    .wrapper {
+        min-width: 600px;
+        min-height: 100%;
+        padding-bottom: 78px;
+        box-sizing: border-box;
+        background: url(img/comppattern2.png);
+    }
+    header {
+        height: 118px;
+        background: #eff3f7;
+    }
+    .headerwrapper {
+        height: 115px;
+        min-width: 600px;
+        max-width: 984px;
+        margin: 0 auto;
+        padding-right: 10px;
+   }
+    .container, footer .footerwrapper {
+        min-width: 600px;
+        max-width: 984px;
+        margin: 0 auto;
+   }
+    footer .login {
+        display: block;
+        float: left;
+        width: 70px;
+        height: 70px;
+        /*border: 1px solid red;*/
+        background: url(img/icons.png) 0 -210px;
+    }
+    footer .copyright {
+        font: .8em fira_sanslight;
+        line-height: 70px;
+
+        display: block;
+        height: 68px;
+        margin-left: 260px;
+    }/*
+    .logos a {
+        float: left;
+        position: relative;
+        top: 30px;
+        width: 264px;
+        height: 58px;
+        background-image: url(img/logo.png);
+    }*/
+
+    .logos img {
+        float: left;
+        position: relative;
+        top: 30px;
+        width: 264px;
+        height: 58px;
+    }
+
+    .headerwrapper .social li {
+        display: inline-block;
+        text-align: right;
+        float: right;
+        margin-top: 25px;
+    }
+    .headerwrapper .social li a{
+        display: block;
+        width: 66px;
+        height: 66px;
+        /*border: 1px solid red;*/
+        background: #000;
+    }
+    .social li a[href*="vk"] {
+        background: url(img/social.png) -1px 0;
+    }
+    .social li a[href*="twitter"] {
+        background: url(img/social.png) -71px 0;
+    }
+    .social li a[href*="facebook"] {
+        background: url(img/social.png) -142px 0;
+    }
+    .social li a[href*="github"] {
+        background: url(img/social.png) -213px 0;
+    }
+    .social li a:hover[href*="vk"] {
+        background: url(img/social-active.png) -1px 0;
+    }
+    .social li a:hover[href*="twitter"] {
+        background: url(img/social-active.png) -71px 0;
+    }
+    .social li a:hover[href*="facebook"] {
+        background: url(img/social-active.png) -142px 0;
+    }
+    .social li a:hover[href*="github"] {
+        background: url(img/social-active.png) -213px 0;
+    }
+    .gradientline {
+        height: 3px;
+        /*background-color: #e7eff3;*/
+        background: url(img/grad.png) 50% 0 no-repeat, #e7eff3;
+    }
+    aside {
+        float: left;
+        width: 260px;
+        /*border: 1px solid green;*/
+    }
+    nav.mainmenu {
+        margin: 0 16px;
+        border-radius: 6px;
+        /*border: 1px solid red;*/
+        background-color: #eff3f7;
+    }
+    .mainmenu li {
+        list-style: none;
+        padding: 28px 24px;
+        border-bottom: 2px solid #3ba8c0;
+    }    
+    .mainmenu li a {
+        text-decoration: none;
+        font: 1.2em fira_sansbook;
+        color: #3ba8c0;
+    }
+    .mainmenu li:nth-child(1) a {
+        color: #FFF;
+    }
+    .mainmenu li:nth-last-child(1) a {
+        color: #959aa8;
+    }
+    .mainmenu li:last-child {
+        border: 0;
+    }
+    .mainmenu li:first-child {
+        border-top-right-radius: 6px;
+        border-top-left-radius: 6px;
+    }
+    .mainmenu .aboutme {
+        background: #3ba8c0;
+    }
+    .rightside {
+        margin: 20px 4px 0 260px;
+        /*border: 1px solid cyan;*/
+    }
+    .rightside ul {
+        list-style: none;
+        margin: 0 0 0 44px;
+        border-radius: 6px;
+        background-color: #eff3f7;
+    }
+    .rightside li {
+        padding: 10px 10px 10px 124px;
+    }
+    .rightside li p {
+        margin: 0;
+    }
+    /* Дата-время --- Вторая часть*/
+    .rightside p:nth-child(2) {
+        font: .9em fira_sanslight;
+        color: #959aa8;
+        /*margin: 22px 0 10px -100px;*/
+    }
+    /* Первая часть */
+    .rightside p:nth-child(1) {
+        font: 1.1em fira_sansbook;
+        color: #959aa8;
+        /*margin: 22px 0 10px -100px;*/
+    }
+    /* Заголовки блоков */
+    .rightside li:first-child p {
+        font: 1.4em fira_sansbook;
+        color: #3ba8c0;
+        margin: 22px 0 10px -100px;
+    }
+
+    .rightside .experiens span {
+        float: left;
+        display: block;
+        margin-left: -100px;
+        width: 70px;
+        height: 70px;
+        background: url(img/icons.png) no-repeat 0px -10px, #369;
+    }
+    .rightside .education li:nth-child(2) span {
+        float: left;
+        display: block;
+        margin-left: -100px;
+        width: 70px;
+        height: 70px;
+        background: url(img/icons.png) no-repeat 0px -80px, #369;
+    }
+    .rightside .education li:nth-child(3) span {
+        float: left;
+        display: block;
+        margin-left: -100px;
+        width: 70px;
+        height: 70px;
+        background: url(img/icons.png) no-repeat 0px -150px, #369;
+    }
+
+    /*
+    .rightside .experiens li:nth-child(n + 2) {
+        background: url(img/icons.png) no-repeat 37px -2px;
+    }
+    .rightside .education li:nth-child(2) {
+        background: url(img/icons.png) no-repeat 37px -72px;
+    }
+    .rightside .education li:nth-child(3) {
+        background: url(img/icons.png) no-repeat 37px -142px;
+    }*/
+
+
+    .rightside section:first-child {
+        margin-bottom: 26px;
+    }
+    .rightside ul {
+        padding-bottom: 20px;
+    }
+    .line {
+        width: 208px;
+        height: 2px;
+        background: #3ba8c0;
+        margin-left: -124px;
+    }
+</style>
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <div class="headerwrapper">
+            <div class="logos"><a href="http://www.loftschool.ru"><img src="img/logo.png" alt="Логотип Loftschool"></a></div>
+            <ul class="social">
+                <li><a href="http://www.github.com"></a></li>
+                <li><a href="http://www.facebook.com"></a></li>
+                <li><a href="http://www.twitter.com"></a></li>
+                <li><a href="http://www.vk.com"></a></li>
+            </ul>
+        </div>
+        <div class="gradientline"></div>
+    </header>
+    <div class="container">
+        <aside class="leftside">
+            <nav class="mainmenu">
+                <ul>
+                    <li class="aboutme"><a href="#"><span>Обо мне</span></a></li>
+                    <li class="mywork"><a href="#"><span>Мои работы</span></a></li>
+                    <li class="contacts"><a href="#"><span>Контакты</span></a></li>
+                </ul>
+            </nav>
+        </aside>
+        <div class="rightside">
+            <section class="experiens">
+                <ul>
+                    <li><p>Опыт работы</p><div class="line"></div></li>
+                    <li><p><span class="icon"></span>"ИП Боровицкий" - Продавец дисков "ИП Боровицкий" - Продавец дисков "ИП Боровицкий" - Продавец дисков "ИП Боровицкий" - Продавец дисков "ИП Боровицкий" - Продавец дисков "ИП Боровицкий" - Продавец дисков "ИП Боровицкий" - Продавец дисков "ИП Боровицкий" - Продавец дисков "ИП Боровицкий" - Продавец дисков "ИП Боровицкий" - Продавец дисков "ИП Боровицкий" - Продавец дисков "ИП Боровицкий" - Продавец дисков "ИП Боровицкий" - Продавец дисков "ИП Боровицкий" - Продавец дисков "ИП Боровицкий" - Продавец дисков "ИП Боровицкий" - Продавец дисков </p><p>Сентябрь 2005 - Август 2008</p></li>
+                    <li><p><span class="icon"></span>"ООО Системы безопастности" - Системный администратор</p><p>Июнь 2008 - Июль 2010</p></li>
+                </ul>
+            </section>
+            <section class="education">
+                <ul>
+                    <li><p>Образование</p><div class="line"></div></li>
+                    <li><p><span class="icon"></span>Незаконченное высшее. СПБГУ ИТМО</p><p>Октябрь 2012 - по настоящее время</p></li>
+                    <li><p><span class="icon"></span>Курсы Loftschool.ru</p><p>Ноябрь 2014 - по настоящее время</p></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</div>
+<footer>
+    <div class="gradientline"></div>
+    <div class="footerwrapper">
+        <span class="login"></span>
+        <span class="copyright">© 2015. Это мой сайт, пожалуйста, не копируйте и не воруйте его</span>
+    </div>
+</footer>
+</body>
+</html>
