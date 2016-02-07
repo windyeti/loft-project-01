@@ -3,7 +3,7 @@ html, body {
 	height: 100%;
 }
 body {
-	font: 1em 'fira_sanslight';
+	font: normal 1em 'fira_sanslight';
 }
 .clearfix:before,
 .clearfix:after {
@@ -50,18 +50,17 @@ body {
 	/*text-indent: -9999px;*/
 }
 .social {
-	float: right;
-	padding-top: 31px;
-	padding-right: 88px;
-	padding-left: 0;
+	position: absolute;
+	top: 33px;
+	right: 90px;
+	padding: 0;
+	height: 53px;
 	margin: 0;
 	list-style: none;
 }
 .social .social-item {
-	float: right;
-	width: 53px;
-	height: 53px;
-	margin: 0 9px;
+	display: inline-block;
+	margin-left:12px;
 }
 .social .social-item .social-item-text {
 	display: block;
@@ -124,48 +123,58 @@ body {
 .info .aboutme,
 .info .experiens,
 .info .education
-{
+{	
+	position: relative;
 	border-radius: 5px;
 	background: #eff3f7;
+	overflow: hidden;
 }
 .side .side-nav {
 	margin-bottom: 23px;
 }
 .info .aboutme-head, 
 .info .experiens-head, 
-.info .experiens-head,
+.info .education-head,
 .info .experiens .experiens-items,
-.info .education .education-items 
+.info .education .education-items, 
+.info .experiens .experiens-item-company,
+.info .education .education-item-name 
 {
 	margin: 0;
 }
 /* Навигация */
 .side .side-nav .side-nav-items {
 	margin: 0;
-	padding: 0 10px 0 10px;
-	font-size: 1.3125em;
+	padding-left: 0;
 	list-style: none;
 }
+.side .side-nav .side-nav-item {
+
+}
 .side .side-nav .side-nav-link {
+	display: block;
+	border-top: 2px solid #3ba8c0;
+	padding: 0 0 0 18px;
+	margin: 0 10px;
+	font-size: 1.3125em;
+	line-height: 73px;
 	text-decoration: none;
 	color: #959aa8;
+}
+.side .side-nav .side-nav-link.current {
+	/* изменяем margin, чтобы задвинуть полоску под заливку */
+	margin: 0 0 -2px 0;
+	background: #3ba8c0;
+	color: #fff;
+	text-indent: 10px;
 }
 .side .side-nav .side-nav-link:hover {
 	color: #3ba8c0;
 }
-.side .side-nav .side-nav-item {
-	border-top: 2px solid #3ba8c0;
-	padding: 20px 0 17px 18px;
-}
-.side .side-nav .side-nav-item.current {
-	margin: 0 -10px -2px -10px;
-	padding-left: 28px;
-	background: #3ba8c0;
+.side .side-nav .side-nav-link.current:hover {
 	color: #fff;
 }
-.side .side-nav .side-nav-item.current .side-nav-link {
-	color: #fff;
-}
+
 /* Контакты */
 .side .side-contact .side-contact-items
 {
@@ -177,49 +186,258 @@ body {
 }
 .side .side-contact .side-contact-item
 {
-	padding: 10px 10px 10px 40px;
+	position: relative;
+	display: block;
+	line-height: 40px;
+	padding-left: 83px;
 }
-.side .side-contact .side-contact-item:first-child
+.side .side-contact .side-contact-item.head
 {
+	background: #3ba8c0;
 	padding-left: 21px;
+	font-size: 1.3125em;
+}
+.side .side-contact .side-contact-item.mail .link
+{
+	color: #fff;
+	text-decoration: none;
+}
+.side .side-contact .side-contact-item.mail .link:hover
+{
+	text-decoration: underline;
 }
 .side .side-contact .mail {
 	background: #41b9d4;
 }
-.side .side-contact .mail:before {
+.side .side-contact .phone {
+	background: #48cbe8;
+}
+.side .side-contact .skype {
+	background: #51daf8;
+}
+.side .side-contact .side-contact-item:before {
 	content: " ";
-	display: inline-block;
-	vertical-align: middle;
-	margin-right: 15px;
+	display: block;
+	position: absolute;
+	left: 41px;
+	top: 50%;
 	width: 25px;
 	height: 25px;
-	background-image: url(../img/mail.png);
-} 
+	background: url(../img/iconcontact.png) no-repeat;
+	
+	/* так просили не делать, но этоработает в ие8 */
+	margin-top: -14px;
 
-.side .side-nav,
-.side .side-contact
-{
-	border-radius: 5px;
-	overflow: hidden;
+	/* либо так, это не работает в ие8
+	transform: translateY(-50%);
+	*/
 
 }
+.side .side-contact .head:before {
+	background-position: -25px 0;
+}   
+.side .side-contact .mail:before {
+	background-position: 0 0;
+}  
+.side .side-contact .phone:before {
+	background-position: 0 -25px;
+} 
+.side .side-contact .skype:before {
+	background-position: 0 -50px;
+} 
+
+/* Aboutme Experiens Education */
+.aboutme .aboutme-head
+{
+	width: 318px;
+	padding-left: 22px;
+	border-bottom: 2px solid #3ba8c0;
+	font: normal 1.6875em 'fira_sanslight';
+	line-height: 69px;
+	color: #3ba8c0;
+}
+.experiens .experiens-head,
+.education .education-head
+{	
+	display: inline-block;
+	padding-left: 22px;
+	padding-right: 24px;
+	border-bottom: 2px solid #3ba8c0;
+	font: normal 1.6875em 'fira_sanslight';
+	line-height: 69px;
+	color: #3ba8c0;
+}
+.info .aboutme,
+.info .experiens,
+.info .education
+{
+	padding-bottom: 46px;
+	margin-bottom: 26px;
+}
+.aboutme .aboutme-items,
+.experiens .experiens-items,
+.education .education-items
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.aboutme .aboutme-avatar {
+	float: left;
+    padding-top: 36px;
+    padding-left: 55px;
+}
+.aboutme .aboutme-avatar .aboutme-around-avatar {
+	width: 142px;
+	height: 142px;
+	border: 4px solid #3ba8c0;
+	border-radius: 50%;
+}
+.aboutme .aboutme-items {
+	padding-top: 19px;
+	margin-left: 230px;
+	color: #4a545d;
+}
+.aboutme .aboutme-item {
+}
+.aboutme .aboutme-item .title {
+	display: inline-block;
+	margin-right: 20px;
+	font: normal 1.0625em 'fira_sansmedium';
+	line-height: 30px;
+}
+.aboutme .aboutme-item .description {
+	display: inline-block;
+	vertical-align: top;
+	line-height: 30px;	
+}
+.aboutme .aboutme-item .description.place {
+	width: 300px;
+}
+.aboutme .aboutme-item .description.myskills {
+	width: 240px;
+}
+.aboutme .aboutme-item .skill {
+	width: 19px;
+	padding: 0 14px;
+	border-radius: 2px;
+	line-height: 30px;
+	color: #fff;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#2e8ca2+0,2e8ca2+50,3ba8c0+51,3ba8c0+100 */
+background: #2e8ca2; /* Old browsers */
+background: -moz-linear-gradient(top,  #2e8ca2 0%, #2e8ca2 50%, #3ba8c0 51%, #3ba8c0 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  #2e8ca2 0%,#2e8ca2 50%,#3ba8c0 51%,#3ba8c0 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  #2e8ca2 0%,#2e8ca2 50%,#3ba8c0 51%,#3ba8c0 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e8ca2', endColorstr='#3ba8c0',GradientType=0 ); /* IE6-9 */
+}
+/* Experiens */
+.experiens .experiens-head,
+.education .education-head
+{
+	margin-bottom: 18px;
+}
+.experiens .experiens-item-company,
+.education .education-item-name
+{
+	font: normal 1.0625em 'fira_sansbook';
+	color: #4a545d;
+	line-height: 16px;
+}
+.experiens .experiens-item-data,
+.education .education-item-info
+{
+	font: normal 0.9375em 'fira_sanslight';
+	color: #4a545d;
+}
+.experiens .experiens-item,
+.education .education-item
+{	
+	position: relative;
+	padding: 9px 0 9px 125px;
+}
+
+.experiens .experiens-item:before
+{
+	content: " ";
+	display: block;
+	position: absolute;
+	left: 41px;
+	top: 50%;
+	width: 47px;
+	height: 41px;
+	background: url(../img/iconmain.png) no-repeat;
+	
+	/* так просили не делать, но этоработает в ие8 */
+	/* сдвиг margin-top = половина высоты картинки +
+	 */
+	margin-top: -24px;
+
+	/* либо так, это не работает в ие8
+	transform: translateY(-50%);
+	*/
+
+}
+.education .education-item:before
+{
+	content: " ";
+	display: block;
+	position: absolute;
+	left: 41px;
+	top: 50%;
+	width: 47px;
+	height: 41px;
+	background: url(../img/iconmain.png) no-repeat 0 -82px;
+	
+	/* так просили не делать, но этоработает в ие8 */
+	/* сдвиг margin-top = половина высоты картинки +
+	 */
+	margin-top: -24px;
+
+	/* либо так, это не работает в ие8
+	transform: translateY(-50%);
+	*/
+}
+.education .education-item.college:before
+{
+	content: " ";
+	display: block;
+	position: absolute;
+	left: 41px;
+	top: 50%;
+	width: 47px;
+	height: 41px;
+	background: url(../img/iconmain.png) no-repeat 0 -41px;
+	
+	/* так просили не делать, но этоработает в ие8 */
+	/* сдвиг margin-top = половина высоты картинки +
+	 */
+	margin-top: -24px;
+
+	/* либо так, это не работает в ие8
+	transform: translateY(-50%);
+	*/
+}
+
+
 /* Футер */
 .footer-main {
+	position: relative;
 	min-width: 960px;
 	background: #eff3f7;
 }
 .footer-main .footer-main-lock {
-	float: left;
+	position: absolute;
+	top: 20px;
 	width: 47px;
-	height: 61px;
+	height: 41px;
 	margin-left: 250px;
-	background: url(../img/lockclose.png) no-repeat 0 20px;
+	background: url(../img/iconmain.png) no-repeat 0 -123px;
 }
 .footer-main .footer-main-copyright {
 	margin-left: 505px;
 	line-height: 77px;
 	font-size: 0.8125em;
-	color: 4a545d;
+	color: #4a545d;
 }
 
 
