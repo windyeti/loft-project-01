@@ -180,7 +180,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#2e8ca2', end
 	height: 41px;
 	background: url(../img/iconmain.png) no-repeat 0 -82px;
 	
-	/* так просили не делать, но этоработает в ие8 */
+	 так просили не делать, но этоработает в ие8 
 	/* сдвиг margin-top = половина высоты картинки +
 	 */
 	margin-top: -24px;

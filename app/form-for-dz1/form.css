@@ -1,0 +1,15 @@
+.feedbackform {
+	width: 400px;
+	margin: 0 auto;
+}
+.feedbackform .colorborder {
+	border: 1px solid #48cbe8;
+	border-radius: 2px;
+	background: #b3b3b3;
+}
+.feedbackform .myname,
+.feedbackform .mymail
+{
+	display: inline-block;
+	width: 190px;
+}

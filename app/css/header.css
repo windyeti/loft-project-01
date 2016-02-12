@@ -1,0 +1,59 @@
+
+.head-container {
+	position: relative;
+	height: 116px;
+	/*max-width: 1400px;*/
+	min-width: 960px;
+	background: #eff3f7;
+}
+.logo {
+	position: absolute;
+	top: 40px;
+	left: 99px;
+}
+.logo .text-logo {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -9999px;
+	/*text-indent: -9999px;*/
+}
+.social {
+	position: absolute;
+	top: 33px;
+	right: 90px;
+	padding: 0;
+	height: 53px;
+	margin: 0;
+	list-style: none;
+}
+.social .social-item {
+	display: inline-block;
+	margin-left:12px;
+}
+.social .social-item .social-item-text {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -9999px;
+}
+.social .social-item .social-item-link {
+	display: block;
+	width: 53px;
+	height: 53px;
+}
+.social .social-item.vk {
+	background: url(../img/social-icons.png) no-repeat 0 0;
+}
+.social .social-item.tw {
+	background: url(../img/social-icons.png) no-repeat -53px 0;
+}
+.social .social-item.facebook {
+	background: url(../img/social-icons.png) no-repeat -106px 0;
+}
+.social .social-item.github {
+	background: url(../img/social-icons.png) no-repeat -159px 0;
+}
+.social .social-item:hover {
+	background-position-y: -53px;
+}

@@ -1,0 +1,122 @@
+.side {
+	float: left;
+	width: 250px;
+}
+.side .side-nav {
+	margin-bottom: 23px;
+}
+.side .side-nav,
+.side .side-contact
+{	
+	position: relative;
+	border-radius: 5px;
+	background: #eff3f7;
+	overflow: hidden;
+}
+.side .side-nav .side-nav-items {
+	margin: 0;
+	padding-left: 0;
+	list-style: none;
+}
+.side .side-nav .side-nav-item {
+
+}
+.side .side-nav .side-nav-link {
+	display: block;
+	border-top: 2px solid #3ba8c0;
+	padding: 0 0 0 18px;
+	margin: 0 10px;
+	font-size: 1.3125em;
+	line-height: 73px;
+	text-decoration: none;
+	color: #959aa8;
+}
+/* убираем линию у первого элемента навигации */
+.side .side-nav .side-nav-item:first-child .side-nav-link {
+	border-top: 0 solid #3ba8c0;
+	padding-top: 2px;
+}
+.side .side-nav .side-nav-link.current {
+	/* изменяем margin, чтобы задвинуть полоску под заливку */
+	margin: 0 0 -2px 0;
+	background: #3ba8c0;
+	color: #fff;
+	text-indent: 10px;
+}
+.side .side-nav .side-nav-link:hover {
+	color: #3ba8c0;
+}
+.side .side-nav .side-nav-link.current:hover {
+	color: #fff;
+}
+
+/* Контакты */
+.side .side-contact .side-contact-items
+{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	font: normal 1.0625em 'fira_sanslight';
+	color: #fff;
+}
+.side .side-contact .side-contact-item
+{
+	position: relative;
+	display: block;
+	line-height: 40px;
+	padding-left: 83px;
+}
+.side .side-contact .side-contact-item.head
+{
+	background: #3ba8c0;
+	padding-left: 21px;
+	font-size: 1.3125em;
+}
+.side .side-contact .side-contact-item.mail .link
+{
+	color: #fff;
+	text-decoration: none;
+}
+.side .side-contact .side-contact-item.mail .link:hover
+{
+	text-decoration: underline;
+}
+.side .side-contact .mail {
+	background: #41b9d4;
+}
+.side .side-contact .phone {
+	background: #48cbe8;
+}
+.side .side-contact .skype {
+	background: #51daf8;
+}
+.side .side-contact .side-contact-item:before {
+	content: " ";
+	display: block;
+	position: absolute;
+	left: 41px;
+	top: 50%;
+	width: 25px;
+	height: 25px;
+	background: url(../img/iconcontact.png) no-repeat;
+	
+	/* так просили не делать, но этоработает в ие8 */
+	margin-top: -14px;
+
+	/* либо так, это не работает в ие8
+	transform: translateY(-50%);
+	*/
+
+}
+.side .side-contact .head:before {
+	background-position: -25px 0;
+}   
+.side .side-contact .mail:before {
+	background-position: 0 0;
+}  
+.side .side-contact .phone:before {
+	background-position: 0 -25px;
+} 
+.side .side-contact .skype:before {
+	background-position: 0 -50px;
+} 

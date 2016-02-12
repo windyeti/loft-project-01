@@ -1,0 +1,27 @@
+.footer-main {
+	position: relative;
+	min-width: 960px;
+	background: #eff3f7;
+}
+.footer-main .footer-main-lock {
+	position: absolute;
+	top: 20px;
+	width: 47px;
+	height: 41px;
+	margin-left: 250px;
+	background: url(../img/iconmain.png) no-repeat 0 -123px;
+}
+.footer-main .footer-main-copyright {
+	margin-left: 505px;
+	line-height: 77px;
+	font-size: 0.8125em;
+	color: #4a545d;
+}
+
+.footer-main:before {
+	content: " ";
+	display: block;
+	width: 100%;
+	height: 3px;
+	background: url(../img/grad.png) 50% 0;
+}

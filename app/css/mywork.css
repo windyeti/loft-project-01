@@ -1,0 +1,118 @@
+
+@import url("for-all.css");
+@import url("header.css");
+@import url("side-nav-contact_mywork.css");
+@import url("footer.css");
+
+
+/* Полоса градиента */
+.container:before {
+	content: " ";
+	display: block;
+	width: 100%;
+	height: 3px;
+	background: url(../img/grad.png) 50% 0;
+	margin-bottom: 40px;
+}
+.info {
+	float: right;
+	width: 650px;
+}
+.info .mywork {	
+	position: relative;
+	padding-bottom: 46px;
+	border-radius: 5px;
+	background: #eff3f7;
+	overflow: hidden;
+}
+.info .mywork-head, 
+.info .mywork .mywork-items
+{
+	margin: 0;
+}
+.mywork .mywork-head {	
+	display: inline-block;
+	padding-left: 22px;
+	padding-right: 24px;
+	margin-bottom: 27px;
+	border-bottom: 2px solid #3ba8c0;
+	font: normal 1.6875em 'fira_sanslight';
+	line-height: 69px;
+	color: #3ba8c0;
+}
+.mywork .mywork-items {
+	list-style: none;
+	padding: 0 5px;
+}
+.mywork .mywork-item {	
+	float: left;
+	position: relative;
+	width: 183px;
+	height: 183px;
+	padding: 0 15px;
+	padding-bottom: 47px;
+}
+.mywork .mywork-item .mywork-img {
+	border: 2px solid #3ba8c0;
+	border-radius: 4px;
+}
+.mywork .mywork-www-link {
+	display: block;
+	text-decoration: none;
+	text-align: center;
+	font: normal 0.9375em 'fira_sanslight_italic';
+	color: #3ba8c0;
+	line-height: 16px;
+    margin-bottom: 10px;
+}
+.mywork .moreinfo:hover:before {
+	position: absolute;
+	content: " ";
+	display: block;
+	top: 0;
+	left: 15px;
+	border-radius: 4px;
+	opacity: 0.5;
+	width: 185px;
+	height: 130px;
+}
+.mywork .mywork01:hover:before {
+	background: url(../img/name_project-1.png) no-repeat 50% 50% #369;
+}
+.mywork .mywork02:hover:before {
+	background: url(../img/name_project-2.png) no-repeat 50% 50% #369;
+}
+.mywork .mywork03:hover:before {
+	background: url(../img/name_project-3.png) no-repeat 50% 50% #369;
+}
+.mywork .mywork04:hover:before {
+	background: url(../img/name_project-4.png) no-repeat 50% 50% #369;
+}
+
+
+.mywork .button_add_new_project_border {
+	height: 92px;
+	padding-top: 35px;
+	border: 1px dashed #3ba8c0;
+	border-radius: 4px;
+	background: #edf8fc;
+	cursor: pointer;
+}
+.mywork .button_add_new_project .icon-img  {
+	background: url(../img/mywork/button_add_new_project.png) 50% 50% #edf8fc no-repeat;
+	width: 34px;
+	height: 34px;
+	margin: 0 auto 10px;
+}
+.mywork .button_add_new_project .add_new  {
+	text-align: center;
+	font: normal 0.9375em Arial;
+	color: #3ba8c0;
+}
+.mywork .mywork-aboutproject {
+	font: normal 0.8125em 'fira_sanslight';
+	color: #4a545d;
+	text-align: center;
+	line-height: 16px;
+}
+
